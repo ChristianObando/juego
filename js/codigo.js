@@ -1,3 +1,8 @@
+function iniciarJuego(){
+    let botonMascotaJugador = document.getElementById('seleccion')
+    botonMascotaJugador.addEventListener('click', seleccionMascota) 
+}
+
 function seleccionMascota(){
     let min = 1
     let max = 12
@@ -42,10 +47,7 @@ function seleccionMascota(){
     }else {
         alert("no elegiste una mierda")
     }
-    alert("elegiste a: " + mascota)
     
-    document.getElementById("miMascota").innerHTML = mascota
-
     rival=  Math.floor(Math.random() * (max - min + 1) + min)
 
         if (rival == 1){
@@ -73,20 +75,17 @@ function seleccionMascota(){
         }else if (rival == 12){
             mascotaR = "Cascada"
         } 
-   
-    alert("te enfrentaras a: " + mascotaR)
 
-    document.getElementById("mascotaRival").innerHTML = mascotaR
+        alert("elegiste a: " + mascota)    
+        document.getElementById("miMascota").innerHTML = mascota
+        alert("te enfrentaras a: " + mascotaR)
+        document.getElementById("mascotaRival").innerHTML = mascotaR
    
 }
 
+window.addEventListener('load',iniciarJuego)
 
-
-/* let botonMascotaJugador = document.getElementById('seleccion')
-botonMascotaJugador.addEventListener('click', seleccionMascota)   */
-
-/* let botonRival = document.getElementById("eleccionRrival")
-botonRival.addEventListener('click', eleccionMascotaRival(1,12)) */ 
+ 
     
 
 
